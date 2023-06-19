@@ -1,10 +1,11 @@
-import mongoose, { version } from "mongoose";
+import mongoose from "mongoose";
 
 const { Schema, model } = mongoose;
 
 const BookSchema = new Schema({
   BookId: String,
-  Name: String,
+  name: String,
+  author: String,
 });
 
 export const BookModel = model("books", BookSchema);
