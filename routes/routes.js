@@ -10,10 +10,10 @@ import validateBook from "../middlewares/validateBook.js";
 const router = express.Router();
 
 router.get("/books", allBooks);
-router.get("/books", bookbyId);
-router.post("/books", addBook, validateBook);
-router.put("/books", updateBook);
-router.delete("/books", deleteBook);
+router.get("/books/id", bookbyId);
+router.post("/books/add", addBook, validateBook);
+router.put("/books/update", updateBook);
+router.delete("/books/delete", deleteBook);
 
 export default router;
 
