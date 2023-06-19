@@ -3,15 +3,17 @@ import allBooks from "../controllers/allBooks.js";
 import bookbyId from "../controllers/bookbyId.js";
 import addBook from "../controllers/addBook.js";
 import updateBook from "../controllers/updateBook.js";
+import deleteBook from "../controllers/deleteBook.js";
+
 import validateBook from "../middlewares/validateBook.js";
 
 const router = express.Router();
 
 router.get("/books", allBooks);
-router.get("/books/", bookbyId);
+router.get("/books", bookbyId);
 router.post("/books", addBook, validateBook);
-router.put("/books/", updateBook);
-router.delete("/books");
+router.put("/books", updateBook);
+router.delete("/books", deleteBook);
 
 export default router;
 
