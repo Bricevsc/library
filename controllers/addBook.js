@@ -1,6 +1,6 @@
 import { BookModel } from "../model/Books.js";
 
-export default async function (res, res) {
+export default async function (req, res) {
   try {
     const { name, author } = req.body;
     const book = await BookModel.findOne({ name: name });

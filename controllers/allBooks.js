@@ -1,6 +1,6 @@
-import { BookModel } from "../model/Books";
+import { BookModel } from "../model/Books.js";
 
-export default async function (res, res) {
+export default async function (req, res) {
   try {
     await BookModel.find({});
     res.status(201).send({ ok: "true" });
