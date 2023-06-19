@@ -3,6 +3,7 @@ import Joi from "joi";
 export default (req, res, next) => {
   const updateBookSchema = Joi.object({
     name: Joi.string().required,
+    newName: Joi.string().required,
     author: Joi.string().required,
   });
   const { error } = updateBookSchema.validate(req.body, { abortEarly: false });

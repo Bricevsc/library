@@ -9,7 +9,6 @@ import deleteBook from "../controllers/deleteBook.js";
 import validateBook from "../middlewares/validateBook.js";
 import validateUpdateBook from "../middlewares/validateUpdateBook.js";
 import validateBookById from "../middlewares/validateBookById.js";
-import validateDeleteBook from "../middlewares/validateDeleteBook.js";
 
 const router = express.Router();
 
@@ -17,7 +16,7 @@ router.get("/books", allBooks);
 router.get("/books/id", bookbyId, validateBookById);
 router.post("/books/add", addBook, validateBook);
 router.put("/books/update", updateBook, validateUpdateBook);
-router.delete("/books/delete", deleteBook, validateDeleteBook);
+router.delete("/books/delete", deleteBook, validateBookById);
 
 export default router;
 
