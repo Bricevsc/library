@@ -1,4 +1,5 @@
 import express from "express";
+
 import allBooks from "../controllers/allBooks.js";
 import bookbyId from "../controllers/bookbyId.js";
 import addBook from "../controllers/addBook.js";
@@ -6,14 +7,17 @@ import updateBook from "../controllers/updateBook.js";
 import deleteBook from "../controllers/deleteBook.js";
 
 import validateBook from "../middlewares/validateBook.js";
+import validateUpdateBook from "../middlewares/validateUpdateBook.js";
+import validateBookById from "../middlewares/validateBookById.js";
+import validateDeleteBook from "../middlewares/validateDeleteBook.js";
 
 const router = express.Router();
 
 router.get("/books", allBooks);
-router.get("/books/id", bookbyId);
+router.get("/books/id", bookbyId, validateBookById);
 router.post("/books/add", addBook, validateBook);
-router.put("/books/update", updateBook);
-router.delete("/books/delete", deleteBook);
+router.put("/books/update", updateBook, validateUpdateBook);
+router.delete("/books/delete", deleteBook, validateDeleteBook);
 
 export default router;
 
