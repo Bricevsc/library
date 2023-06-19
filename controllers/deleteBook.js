@@ -3,7 +3,7 @@ import { BookModel } from "../model/Books.js";
 export default async function (req, res) {
   try {
     const { name } = req.body;
-    const book = await BookModel.findByIdAndRemove(name);
+    const book = await BookModel.findOneAndDelete({name: name});
     if (!book) {
       res.status(400).send({ error: "Error: Bad request" });
     } else {

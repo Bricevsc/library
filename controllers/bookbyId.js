@@ -10,7 +10,6 @@ export default async function (req, res) {
       res.status(200).send({
         ok: "true",
         book: {
-          id: book._id,
           name: book.name,
           author: book.author,
         },
